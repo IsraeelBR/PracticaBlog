@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<h2 align="center">POST PUBLICADOS</h2>
+
+<ul>
+		{%for post in posts %}
+		<a href="{{post.get_absolute_url}}">
+		<br>
+			<h1>{{post.titulo}}</h1>
+			</a>
+			<h2>{{post.cuerpo | truncatewords:30 }}</h2>
+			<span>{{post.fecha}}</span>
+		<hr>
+		{%empty%}
+		<h1>No hay post morro</h1>
+		{%endfor%}
+	</ul>
+{%endblock content%}

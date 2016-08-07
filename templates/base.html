@@ -1,0 +1,53 @@
+<head>
+	<title>Drum Blog</title>
+	<style>
+		.nav{
+			width: 100%;
+			background: black;
+			text-align: center;
+			color: white;
+			height: 90px;
+		}
+
+		h1{
+			font-family: Tahoma;
+			font-size: 30px;
+		}
+		h2{
+			font-family: Tahoma;
+			font-size: 20px;
+		}
+
+		a{
+			font-family: Tahoma;
+			font-size: 20px;
+		}
+
+	</style>
+	
+</head>
+<body>
+	
+		<nav class="nav">
+		<h1>Drum Blog</h1>
+		
+		
+		
+		<a href="{%url 'lista'%}">Blog</a>
+		{%if request.user.is_authenticated%}
+		<a href="{%url 'nuevopost'%}">Nuevo post</a>
+		<a href="{% url 'perfil'%}">Tu perfil</a>
+		<a href="{% url 'logout'%}">Cerrar Sesion</a>
+	
+		{%else%}
+		<a href="{%url 'login'%}">Iniciar Sesion</a>
+		{%endif%}
+
+	
+
+		</nav>
+		{%block content%}
+		{%endblock content%}
+
+</body>
+</html>
