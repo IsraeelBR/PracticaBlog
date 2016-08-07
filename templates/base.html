@@ -19,9 +19,14 @@
 		}
 
 		a{
+			color: red;
+		}
+
+		a:hover {
+			color: #1E90FF;
 			font-family: Tahoma;
 			font-size: 20px;
-		}
+		}	
 
 	</style>
 	
@@ -42,8 +47,6 @@
 		{%else%}
 		<a href="{%url 'login'%}">Iniciar Sesion</a>
 		{%endif%}
-
-	
 
 		</nav>
 		{%block content%}
